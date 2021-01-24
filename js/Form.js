@@ -5,6 +5,7 @@ class Form {
     this.button = createButton('Play');
     this.greeting = createElement('h2');
     this.title = createElement('h2');
+    this.reset = createButton("Reset");
   }
   hide(){
     this.greeting.hide();
@@ -19,6 +20,18 @@ class Form {
 
     this.input.position(displayWidth/2 - 40 , displayHeight/2 - 80);
     this.button.position(displayWidth/2 + 30, displayHeight/2);
+
+    this.reset.position(100, 50);
+    this.reset.mousePressed(
+      ()=>{
+        player.updateCount(0);
+        game.update(0);
+        
+        database.ref("/").child("players").remove();
+
+      }
+    )
+
 
     this.button.mousePressed(
       ()=>{
