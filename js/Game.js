@@ -85,6 +85,10 @@ class Game {
     if(player.distance>3670){
       gameState=2;
       player.rank++;
+      System.Media.SoundPlayer = new System.Media.SoundPlayer();
+      player.SoundLocation = "C:\Users\arjun\OneDrive\Desktop\Coding\Project38\CarRacingStage1.5\sounds"
+      player.Load();
+      player.Play();
       Player.updateCarsatEnd(player.rank);
       
     }
