@@ -26,6 +26,7 @@ class Form {
       ()=>{
         player.updateCount(0);
         game.update(0);
+        Player.updateCarsatEnd(0);
         
         database.ref("/").child("players").remove();
 

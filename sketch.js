@@ -5,6 +5,7 @@ var playerCount;
 var allPlayers;
 var distance = 0;
 var database;
+var alertRank = 1;
 
 var form, player, game;
 

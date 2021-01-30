@@ -44,7 +44,7 @@ class Game {
   play(){
     form.hide();
     Player.getPlayerInfo();
-    
+    player.getCarsatEnd();
     //Game Starts
     if(allPlayers !== undefined){
       background("black");
@@ -84,6 +84,8 @@ class Game {
     }
     if(player.distance>3670){
       gameState=2;
+      player.rank++;
+      Player.updateCarsatEnd(player.rank);
       
     }
     drawSprites();
@@ -91,5 +93,16 @@ class Game {
   
   end(){
       console.log("end");
+      console.log("rank: " + player.rank);
+    if(alertRank){
+      swal({
+        title : "Game Over",
+        text : "Your Rank : " + player.rank,
+        icon : "success",
+        button : "Okay"
+      })
+      alertRank = 0;
+    }
+      
   }
 }
