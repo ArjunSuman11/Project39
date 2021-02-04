@@ -77,18 +77,15 @@ class Game {
       }
 
     }
-
+    //moving the player
     if(keyIsDown(UP_ARROW) && player.index !== null){
       player.distance +=10
       player.update();
     }
+    //cars at end and rank of player
     if(player.distance>3670){
       gameState=2;
       player.rank++;
-      System.Media.SoundPlayer = new System.Media.SoundPlayer();
-      player.SoundLocation = "C:\Users\arjun\OneDrive\Desktop\Coding\Project38\CarRacingStage1.5\sounds"
-      player.Load();
-      player.Play();
       Player.updateCarsatEnd(player.rank);
       
     }

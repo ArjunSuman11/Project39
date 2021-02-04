@@ -1,5 +1,5 @@
 class Form {
-
+//creating the constructor for the input, buttons, elements
   constructor() {
     this.input = createInput("Name");
     this.button = createButton('Play');
@@ -7,13 +7,14 @@ class Form {
     this.title = createElement('h2');
     this.reset = createButton("Reset");
   }
+  //hide () for using @line 40, 41
   hide(){
     this.greeting.hide();
     this.button.hide();
     this.input.hide();
     this.title.hide();
   }
-
+  //writing the display function to get the output
   display(){
     this.title.html("Car Racing Game");
     this.title.position(displayWidth/2 - 50, 0);
@@ -33,7 +34,7 @@ class Form {
       }
     )
 
-
+      //if button is pressed , then the game updates and follows with the given code
     this.button.mousePressed(
       ()=>{
         this.input.hide();  //button & form
